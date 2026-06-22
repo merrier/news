@@ -1,0 +1,14 @@
+{
+  "name": "news",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/fetch-news.mjs",
+    "fetch": "node scripts/fetch-news.mjs",
+    "serve": "python3 -m http.server 4173 -d site"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
