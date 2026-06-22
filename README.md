@@ -2,11 +2,23 @@
 
 一个部署在 GitHub Pages 上的综合热榜站。
 
+在线访问：[https://merrier.wang/news/](https://merrier.wang/news/)
+
 它借鉴 [ourongxing/newsnow](https://github.com/ourongxing/newsnow) 的数据源组织思路，但为了适配 GitHub Pages，采用静态站点方案：
 
 - GitHub Actions 定时抓取热点数据
 - 生成 `site/data/news.json`
 - GitHub Pages 发布 `site/`
+
+## 预览
+
+### PC
+
+![PC 预览](docs/screenshots/pc.jpg)
+
+### Mobile
+
+<img src="docs/screenshots/mobile.jpg" alt="Mobile 预览" width="360">
 
 ## 本地运行
 
