@@ -268,7 +268,7 @@ async function fetchJin10() {
         url: `https://flash.jin10.com/detail/${item.id}`,
         summary,
         info: item.important ? "重要" : "",
-        publishedAt: item.time,
+        publishedAt: chinaTimeToIso(item.time),
       }
     })
 }
@@ -403,6 +403,13 @@ function normalizeDate(value) {
   if (typeof value === "number") return new Date(value).toISOString()
   const date = new Date(value)
   return Number.isNaN(date.valueOf()) ? null : date.toISOString()
+}
+
+function chinaTimeToIso(value) {
+  const match = String(value).match(/^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2}):(\d{2})$/)
+  if (!match) return value
+  const [, year, month, day, hour, minute, second] = match.map(Number)
+  return new Date(Date.UTC(year, month - 1, day, hour - 8, minute, second)).toISOString()
 }
 
 function faviconUrl(home) {
